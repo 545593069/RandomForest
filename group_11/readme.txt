@@ -1,0 +1,17 @@
+1.数据集文件说明
+DataSet.csv-------原始数据集
+DataSet2.csv-------复制DataSet.csv,对原始数据集进行2分类
+DataSet3.csv-------对DataSet2进行SMOTE处理后生成的数据集
+2.程序说明
+DrawDataPicture.py-------对原始数据进行可视化分析
+SMOTE.py-------SMOTE方法
+CalchlateData.py------调用SMOTE文件，对DataSet2进行SMOTE处理
+calculateAUC_1.py-------画出每棵树的ROC曲线，并计算AUC
+myRF.py-------参考文献论文复现
+myRF1.py-------改进的随机森林方法
+plotCompareFig.py-------算法改进前后的正确率的对比图
+plotTree.py-------决策树的可视化
+3.程序执行说明
+（1）运行myRF.py文件，得到论文复现的结果；
+（2）运行CalchlateData.py,对初始数据集进行预处理，形成新样本；再运行myRF1.py，得到改进后的随机森林模型；
+（3）运行plotCompareFig.py，得到两种算法的正确率比较结果图。
