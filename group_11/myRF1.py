@@ -279,22 +279,23 @@ def similarity_optimization(newforest, samevalue, samerate):
         if not newforest[i] == None:
             # 遍历做对比的树的列
             for k in range(i + 1, len(res)):
-                # time用于统计相似的次数，在每次更换对比树时重置为0
-                time = 0
-                # 遍历列表的当前行
-                for j in range(0, len(res[i])):
-                    # 当前两颗树对比次数
-                    all_contrast = (res[ i].__len__() * res[k].__len__())
-                    # 遍历做对比的树的行
-                    for l in range(0, len(res[k])):
-                        # 如果向量的内积相等，计数器加一
-                        if res[i][j] - res[k][l] < samevalue:
-                            time = time + 1
-                    # 如果相似度大于设定值
-                real_same_rate = time / all_contrast
-                if (real_same_rate > samerate):
-                    # 将对比树置空
-                    newforest[k] = None
+                if not newforest[k] == None:
+                    # time用于统计相似的次数，在每次更换对比树时重置为0
+                    time = 0
+                    # 遍历列表的当前行
+                    for j in range(0, len(res[i])):
+                        # 当前两颗树对比次数
+                        all_contrast = (res[ i].__len__() * res[k].__len__())
+                        # 遍历做对比的树的行
+                        for l in range(0, len(res[k])):
+                            # 如果向量的内积相等，计数器加一
+                            if res[i][j] - res[k][l] < samevalue:
+                                time = time + 1
+                        # 如果相似度大于设定值
+                    real_same_rate = time / all_contrast
+                    if (real_same_rate > samerate):
+                        # 将对比树置空
+                        newforest[k] = None
     result_forest = list()
     for i in range(0, newforest.__len__()):
         if not newforest[i] == None:
