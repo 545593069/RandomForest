@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib as mpl
 from sklearn import metrics
-from group_11.group_11 import myRF
+from group_11 import myRF
 
 
 def caculateAUC(data,inTree):

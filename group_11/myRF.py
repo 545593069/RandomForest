@@ -5,8 +5,8 @@ from csv import reader
 from numpy import mat
 import matplotlib.pyplot as plt
 import numpy as np
-from group_11.group_11 import plotTree
-from group_11.group_11 import caculateAUC_1
+from group_11 import plotTree
+from group_11 import caculateAUC_1
 # 建立一棵CART树
 '''试探分枝'''
 def data_split(index, value, dataset):

@@ -7,7 +7,7 @@ from random import seed
 import numpy as np
 from numpy import mat
 
-from group_11.group_11 import caculateAUC_1, plotTree
+from group_11 import caculateAUC_1, plotTree
 
 # 建立一棵CART树
 '''试探分枝'''

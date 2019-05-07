@@ -1,7 +1,7 @@
 import csv
 
 import pandas as pd
-from group_11.group_11 import SMOTE
+from group_11 import SMOTE
 import matplotlib.pyplot as plt
 groupArray = []
 success = 0
