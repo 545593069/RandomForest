@@ -399,17 +399,17 @@ def getMyRFAcclist(treenum_list):
 
 
 if __name__ == '__main__':
-    start = time.clock()
+    start = time.perf_counter()
     seed(1)  # 每一次执行本文件时都能产生同一个随机数
     filename = 'DataSet3.csv'       # 这里是已经利用SMOTE进行过预处理的数据集
     max_depth = 15  # 调参（自己修改） #决策树深度不能太深，不然容易导致过拟合
     min_size = 1
     sample_ratio = 1
-    trees_num = 20
+    trees_num = 500
 
     feature_ratio = 0.3     # 尽可能小，但是要保证 int(self.feature_ratio * (len(train[0])-1)) 大于1
     same_value = 20        # 向量内积的差（小于此值认为相似）
-    same_rate = 0.82     # 树的相似度（大于此值认为相似）
+    same_rate = 0.92     # 树的相似度（大于此值认为相似）
     # 加载数据
     dataset,features = load_csv(filename)
     traindata,testdata = split_train_test(dataset, feature_ratio)
@@ -450,7 +450,7 @@ if __name__ == '__main__':
     auc_list = caculateAUC_1.caculateRFAUC(testdata, myRF.trees)
     # 画出每棵树的auc——柱状图
     plotTree.plotAUCbar(auc_list.__len__(), auc_list)
-    end = time.clock()
+    end = time.perf_counter()
     print('The end!')
     print(end-start)
 
