@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+'''括号是否匹配1'''
 def isValid(self, s):
     stack = []
     paren_map = {')': '(', ']': '[', '}': '{'}
@@ -9,6 +12,7 @@ def isValid(self, s):
     return not stack
 
 
+'''括号是否匹配2'''
 def isValid2(self, s):
     queue1, queue2 = [], []
     paren_map = {')': '(', ']': '[',  '}': '{'}
@@ -24,5 +28,6 @@ def isValid2(self, s):
     return not queue2
 
 
-if __name__ == '__main__':
-    print(isValid2(self="", s="{[()]}"))
+
+
+
